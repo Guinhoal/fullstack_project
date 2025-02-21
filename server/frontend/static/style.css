@@ -75,28 +75,38 @@ img{
   background-color: black;
 }
 
-.navitems{
+avitems {
   display: flex;
   flex-direction: row;
-  padding: 20px;
-  flex: 1;
-  justify-content: flex-start;
-  justify-self: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.nav_item{
-  margin-left:15px;
-  font-size: 20px;
-  color: black;
-  align-self: center;
+/* Itens de navegação com efeitos de hover */
+.nav_item {
+  margin: 0 15px;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.username{
+.nav_item:hover,
+.nav_item.active {
+  background-color: #e2e6ea;
+  color: #000;
+}
+
+/* Ajuste para o nome do usuário na navegação */
+.username {
   font: 30px sans-serif;
-  color:black;
-  justify-content: 'flex-end';
-  align-self:flex-end;
-  vertical-align: middle;
+  color: #333;
+  margin-left: auto;
+  padding: 10px;
 }
 
 .input_panel {
@@ -124,3 +134,4 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+

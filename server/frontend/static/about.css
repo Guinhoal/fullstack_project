@@ -1,0 +1,117 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-section {
+    text-align: center;
+    padding: 35px 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.header-section h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.header-section h1:after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    background-color: rgb(97, 64, 128);
+    left: 25%;
+    bottom: -10px;
+}
+
+.header-section p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.team-card {
+    width: 22%;
+    min-width: 200px; 
+    background-color: #fff;
+    border: 3px solid rgb(103,102,105);
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; 
+    padding: 10px; 
+}
+
+
+/* Fade in animation for inner content */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.team-card .card-body {
+    padding: 15px; /* compact container padding */
+    flex: 1;
+    animation: fadeInUp 0.6s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.25);
+}
+
+.team-card img {
+    width: 100%;
+    border-bottom: 3px solid rgb(103,102,105);
+    object-fit: cover;
+}
+
+.team-card .card-body .title {
+    font-size: 1.5em;
+    background-color: rgb(97, 64, 128);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.team-card:hover .card-body .title {
+    background-color: rgb(85, 50, 115);
+}
+
+.team-card .card-body p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
