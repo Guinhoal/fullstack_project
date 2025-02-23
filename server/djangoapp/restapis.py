@@ -1,5 +1,5 @@
 # Uncomment the imports below before you add the function code
-# import requests
+import requests
 import os
 from dotenv import load_dotenv
 
@@ -19,14 +19,17 @@ def get_request(endpoint, **kwargs):
 
     request_url = backend_url+endpoint+"?"+params
 
-    print("GET from {} ".format(request_url))
+    print(f"Tentando acessar URL: {request_url}")
     try:
-        # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
+        response.raise_for_status()  # Isso vai levantar uma exceção para status codes 4xx/5xx
         return response.json()
-    except:
-        # If any error occurs
-        print("Network exception occurred")
+    except requests.exceptions.RequestException as e:
+        print(f"Erro na requisição: {str(e)}")
+        return None
+    except Exception as e:
+        print(f"Erro inesperado: {str(e)}")
+        return None
 
 def analyze_review_sentiments(text):
     request_url = sentiment_analyzer_url+"analyze/"+text
